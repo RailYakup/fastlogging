@@ -20,7 +20,7 @@ except ImportError:
 BASEDIR = os.path.dirname(__file__)
 PKGNAME = 'fastlogging'
 PKGDIR = os.path.join(BASEDIR, PKGNAME)
-VERSION = "0.9.6"
+VERSION = "1.0.0"
 
 if os.path.exists("build"):
     shutil.rmtree("build")
@@ -115,8 +115,8 @@ setup(
     long_description=long_description,
     long_description_content_type='text/x-rst',
 
-    url='https://github.com/brmmm3/fastlogging',
-    download_url='https://github.com/brmmm3/fastlogging/releases/download/%s/fastlogging-%s.tar.gz' % (VERSION, VERSION),
+    url='https://github.com/RailYakup/fastlogging',
+    download_url='https://github.com/RailYakup/fastlogging/releases/download/%s/fastlogging-%s.tar.gz' % (VERSION, VERSION),
 
     author='Martin Bammer',
     author_email='mrbm74@gmail.com',
