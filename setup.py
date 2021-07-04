@@ -109,7 +109,7 @@ if annotate:
     sys.exit(0)
 
 setup(
-    name='fastlogging',
+    name='fast-logging',
     version=VERSION,
     description='A faster replacement of the standard logging module.',
     long_description=long_description,
