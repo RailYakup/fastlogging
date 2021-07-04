@@ -163,7 +163,6 @@ class Logger(object):
         self._thrTimer = None
         self._thrLogger = None
         self.stopped = False
-
         if pathName is not None:
             for logger in domains.values():
                 if pathName == logger.pathName:
