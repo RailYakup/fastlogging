@@ -18,7 +18,7 @@ except ImportError:
     from distutils.extension import Extension
 
 BASEDIR = os.path.dirname(__file__)
-PKGNAME = 'fastlogging'
+PKGNAME = 'fast_logging'
 PKGDIR = os.path.join(BASEDIR, PKGNAME)
 VERSION = "1.0.1"
 
