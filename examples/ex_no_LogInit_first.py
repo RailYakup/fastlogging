@@ -1,5 +1,5 @@
 
-from fastlogging import GetLogger
+from fast_logging import GetLogger
 
 if __name__ == "__main__":
     logger = GetLogger()

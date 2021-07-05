@@ -2,7 +2,7 @@
 import os
 import time
 
-from fastlogging import LogInit
+from fast_logging import LogInit
 
 addr = "127.0.0.1"
 port = 12345

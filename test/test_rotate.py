@@ -1,7 +1,7 @@
 
 import os
 
-from fastlogging import LogInit
+from fast_logging import LogInit
 
 
 def RemoveLogs():

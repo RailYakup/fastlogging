@@ -1,7 +1,7 @@
 
 import time
 
-from fastlogging import LogInit, DEBUG
+from fast_logging import LogInit, DEBUG
 
 
 if __name__ == "__main__":

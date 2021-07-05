@@ -9,7 +9,7 @@ import importlib.util
 # noinspection PyUnresolvedReferences
 from types import ModuleType
 
-from fastlogging.fastlogging import DEBUG, INFO, WARNING, ERROR, FATAL
+from fast_logging.fastlogging import DEBUG, INFO, WARNING, ERROR, FATAL
 
 
 optimized = set()

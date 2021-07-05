@@ -5,7 +5,7 @@ import logging.handlers
 
 import simplejson as json
 import shutil
-from fastlogging import FATAL, ERROR, WARNING, INFO, DEBUG, LogInit, LOG2SSYM, OptimizeObj
+from fast_logging import FATAL, ERROR, WARNING, INFO, DEBUG, LogInit, LOG2SSYM, OptimizeObj
 
 MB = 1024 * 1024
 
@@ -103,7 +103,7 @@ def DoFastLogging(cnt, level=DEBUG, fileName=None, bRotate=False, bThreads=False
         pathName = os.path.join(dirName, fileName)
     else:
         pathName = None
-    print("fastlogging:", ", ".join(title))
+    print("fast_logging:", ", ".join(title))
     t1 = time.time()
     logger = LogInit("main", level, pathName, size, count, False, False, useThreads=bThreads, compress=compress)
     if cbOptimized is None:
@@ -124,7 +124,7 @@ if __name__ == "__main__":
     fileName = "logging.log"
     fastFileName = "logging.log"
     htmlTemplate = open("../doc/benchmarks/template.html").read()
-    # Benchmark fastlogging module without threads
+    # Benchmark fast_logging module without threads
     for title, name, fileName, bRotate in (("No log file", "nolog", None, False),
                                            ("Log file", "log", "logging.log", False),
                                            ("Rotating log file", "rotate", "logging.log", True)):
@@ -134,13 +134,13 @@ if __name__ == "__main__":
             dts.append(DoLogging(cnt, level, fileName, bRotate))
             dts.append(DoFastLogging(cnt, level, fileName, bRotate))
             dts.append(DoFastLogging(cnt, level, fileName, bRotate, True))
-            # Benchmark fastlogging module with AST optimization constants to values conversion
+            # Benchmark fast_logging module with AST optimization constants to values conversion
             LoggingWorkOptCst = OptimizeObj(globals(), LoggingWork, "logger", optimize=level, const2value=True)
             dts.append(DoFastLogging(cnt, level, fileName, bRotate, cbOptimized=LoggingWorkOptCst, prefix="CONST2VALUE"))
-            # Benchmark fastlogging module with AST optimization level
+            # Benchmark fast_logging module with AST optimization level
             LoggingWorkOpt = OptimizeObj(globals(), LoggingWork, "logger", optimize=level)
             dts.append(DoFastLogging(cnt, level, fileName, bRotate, cbOptimized=LoggingWorkOpt))
-            # Benchmark fastlogging module with AST optimization remove
+            # Benchmark fast_logging module with AST optimization remove
             LoggingWorkOptRem = OptimizeObj(globals(), LoggingWork, "logger", remove=level)
             dts.append(DoFastLogging(cnt, level, fileName, bRotate, cbOptimized=LoggingWorkOptRem, prefix="REMOVE"))
             dtAll[LOG2SSYM[level]] = ", ".join(["%.4f" % dt for dt in dts])
@@ -148,5 +148,5 @@ if __name__ == "__main__":
             F.write(json.dumps(dtAll))
         with open("../doc/benchmarks/%s.html" % name, "w") as F:
             F.write(htmlTemplate % dtAll)
-    # Benchmark fastlogging module with threads
+    # Benchmark fast_logging module with threads
     DoFastLogging(cnt, FATAL, fastFileName, bThreads=True)

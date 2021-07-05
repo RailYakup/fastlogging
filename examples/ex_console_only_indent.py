@@ -1,5 +1,5 @@
 
-from fastlogging import LogInit, DEBUG
+from fast_logging import LogInit, DEBUG
 
 def A():
     logger.info("A()")

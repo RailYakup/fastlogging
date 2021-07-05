@@ -1,5 +1,5 @@
 
-from fastlogging import LogInit
+from fast_logging import LogInit
 
 logger = LogInit(pathName="/tmp/example1.log", console=True, colors=True)
 logger.debug("This is a debug message.")

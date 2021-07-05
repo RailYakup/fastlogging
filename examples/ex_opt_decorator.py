@@ -1,5 +1,5 @@
 
-from fastlogging import LogInit, INFO, Optimize
+from fast_logging import LogInit, INFO, Optimize
 
 
 logger = LogInit(console=True)

@@ -1,1 +1,1 @@
-fastlogging
+fast_logging

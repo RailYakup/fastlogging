@@ -43,7 +43,7 @@ else:
         from Cython.Build import cythonize
         import Cython.Compiler.Version
     except ImportError:
-        print("Warning: cython package not installed! Creating fastlogging package in pure python mode.")
+        print("Warning: cython package not installed! Creating fast_logging package in pure python mode.")
         nocython = True
 
 if nocython:
@@ -54,7 +54,7 @@ if nocython:
 else:
     from pyorcy import extract_cython
 
-    extract_cython(os.path.join(PKGDIR, 'fastlogging.py'))
+    extract_cython(os.path.join(PKGDIR, 'fast_logging.py'))
     extract_cython(os.path.join(PKGDIR, 'network.py'))
 
     # noinspection PyUnboundLocalVariable
@@ -86,7 +86,7 @@ else:
                         extension.extra_compile_args = ["-O2", "-D__PYX_FORCE_INIT_THREADS=1"]
             build_ext.build_extensions(self)
 
-    cythonize("fastlogging/*.pyx", language_level=3, annotate=annotate,
+    cythonize("fast_logging/*.pyx", language_level=3, annotate=annotate,
               language="c++", exclude=["setup.py"])
     install_requires = ['Cython']
     cmdclass = {'build_ext': build_ext_subclass}

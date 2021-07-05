@@ -1,4 +1,4 @@
-from fastlogging import LogInit
+from fast_logging import LogInit
 
 logger = LogInit(console=True, colors=True)
 

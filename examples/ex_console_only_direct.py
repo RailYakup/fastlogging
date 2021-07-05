@@ -1,5 +1,5 @@
 
-from fastlogging import LogInit
+from fast_logging import LogInit
 
 if __name__ == "__main__":
     logger = LogInit(console = True, colors = True)

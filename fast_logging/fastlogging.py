@@ -177,16 +177,16 @@ class Logger(object):
                     self._thrLogger = Thread(target=self.__logThread, daemon=True, name=f"LogThread_{domain}")
                     self._thrLogger.start()
         if Logger.useThreads and Logger.thrConsoleLogger is None:
-            import fastlogging.console
-            Logger.thrConsoleLogger = fastlogging.console.ConsoleLogger(Logger.consoleLock)
+            import fast_logging.console
+            Logger.thrConsoleLogger = fast_logging.console.ConsoleLogger(Logger.consoleLock)
             Logger.thrConsoleLogger.start()
         if server is not None:
-            import fastlogging.network
-            self.server = fastlogging.network.LoggingServer(self, *server)
+            import fast_logging.network
+            self.server = fast_logging.network.LoggingServer(self, *server)
             self.server.start()
         if connect is not None:
-            import fastlogging.network
-            self.client = fastlogging.network.LoggingClient(*connect)
+            import fast_logging.network
+            self.client = fast_logging.network.LoggingClient(*connect)
             self.client.start()
 
     def __del__(self):

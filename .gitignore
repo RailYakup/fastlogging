@@ -7,7 +7,7 @@ build/
 
 fastlogging\.egg-info/
 
-fastlogging/__pycache__/
+fast_logging/__pycache__/
 
 *.cpp
 
